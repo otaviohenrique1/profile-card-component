@@ -9,67 +9,33 @@
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--dark-cyan);
   font-size: 18px;
   font-family: 'Kumbh Sans', sans-serif;
 }
 
 body::after {
-  content: "";
-  position: absolute;
   top: 0;
   left: 0;
-  width: 900px;
-  height: 900px;
   background-image: url("../images/bg-pattern-top.svg");
   background-position: right 120px bottom 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 body::before {
-  content: "";
-  position: absolute;
   bottom: 0;
   right: 0;
-  width: 900px;
-  height: 900px;
   background-image: url("../images/bg-pattern-bottom.svg");
   background-position: left 120px top 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-/*
-body::after {
+body::after, body::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px;
-  height: 500px;
-  background-image: url("../images/bg-pattern-top.svg");
-  background-position: right 100px bottom 300px;
+  width: 900px;
+  height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-body::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 500px;
-  height: 500px;
-  background-image: url("../images/bg-pattern-bottom.svg");
-  background-position: left 100px top 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-*/
 
 main {
   width: 350px;
@@ -85,14 +51,24 @@ main {
   display: flex;
 }
 
-.flex-direction-column {
-  flex-direction: column;
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-800 {
+  font-weight: 800;
 }
 
 .info {
   height: 75%;
-  display: flex;
-  justify-content: center;
   align-items: end;
   position: relative;
 }
@@ -113,44 +89,49 @@ main {
 
 .bio__nome {
   color: var(--very-dark-desaturated-blue);
-  font-weight: 800;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .bio__nome span {
-  font-weight: 400;
   color: var(--dark-grayish-blue);
 }
 
 .bio__local {
   font-size: 1rem;
-  font-weight: 400;
   color: var(--dark-grayish-blue);
 }
 
 .stats {
-  display: flex;
   justify-content: space-evenly;
-  align-items: center;
   border-top: 1px solid var(--dark-gray);
   height: 25%;
 }
 
 .stats__data {
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .data__number {
   color: var(--very-dark-desaturated-blue);
-  font-weight: 800;
   font-size: 1.2rem;
 }
 
 .data__label {
   font-size: 0.8rem;
-  font-weight: 400;
   color: var(--dark-grayish-blue);
+}
+
+@media screen and (max-width: 800px) {
+  body::after {
+    background-position: right 200px bottom 50px;
+  }
+  
+  body::before {
+    background-position: left 200px top 250px;
+  }
+  body::after, body::before {
+    width: 500px;
+    height: 500px;
+  }
 }
