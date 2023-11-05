@@ -1,0 +1,48 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-cyan);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/bg-pattern-top.svg");
+  background-position: right 100px bottom 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/bg-pattern-bottom.svg");
+  background-position: left 100px top 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  width: 350px;
+  height: 380px;
+  background-color: blue;
+  z-index: 1;
+}
